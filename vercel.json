@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/js/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "dest": "/js/$1"
+    },
+    {
+      "src": "/style.css",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "dest": "/style.css"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/seoul-subway/:path*",
+      "destination": "http://swopenAPI.seoul.go.kr/api/subway/:path*"
+    }
+  ]
+}
